@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Habit Tracker</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f5;
+      --border: #dddddd;
+      --accent: #000000;
+      --accent-soft: #f0f0f0;
+      --text-primary: #000000;
+      --text-secondary: #333333;
+      --text-muted: #777777;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #ffffff;
+      color: #000000;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      line-height: 1.85;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Header */
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 48px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5f5f5;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    .app-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #000000;
+    }
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: #000000;
+    }
+
+    .meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #777777;
+      letter-spacing: 0.04em;
+    }
+
+    .meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* TOC */
+    .toc {
+      background: #f5f5f5;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .toc-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+    }
+
+    @media (max-width: 520px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+
+    .toc li {
+      counter-increment: toc;
+      font-size: 14px;
+      color: #333333;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero) ". ";
+      color: #777777;
+      font-size: 11px;
+      margin-right: 4px;
+    }
+
+    .toc a {
+      color: #333333;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: #000000; }
+
+    /* Sections */
+    section {
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555555;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    p {
+      color: #333333;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Info cards */
+    .card {
+      background: #f5f5f5;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .card-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* Permission table */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    .perm-table th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555555;
+      border-bottom: 2px solid #000000;
+      font-weight: 700;
+      background: #f5f5f5;
+    }
+
+    .perm-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #dddddd;
+      color: #333333;
+      vertical-align: top;
+    }
+
+    .perm-table tr:last-child td { border-bottom: none; }
+
+    .perm-table td:first-child {
+      font-family: monospace;
+      font-size: 12px;
+      color: #000000;
+      font-weight: 700;
+      white-space: nowrap;
+      padding-right: 24px;
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: #f5f5f5;
+      border: 1px solid #cccccc;
+      border-left: 3px solid #000000;
+      border-radius: 2px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #333333;
+    }
+
+    .highlight strong {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    /* Links */
+    a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    a:hover { color: #555555; }
+
+    /* Footer */
+    footer {
+      padding: 48px 0 64px;
+      text-align: center;
+    }
+
+    .footer-line {
+      width: 40px;
+      height: 1px;
+      background: #cccccc;
+      margin: 0 auto 32px;
+    }
+
+    .footer-app {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: #777777;
+    }
+
+    ul.data-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    ul.data-list li {
+      padding: 8px 0 8px 20px;
+      position: relative;
+      color: #333333;
+      font-size: 15px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    ul.data-list li:last-child { border-bottom: none; }
+
+    ul.data-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #000000;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="app-badge">HabitSetu App</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <div class="meta">
+      <span>Effective Date: 11 March 2026</span>
+      <span>🔄 Last Updated: 11 March 2026</span>
+      <span>📍 Version 1.0</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data We Collect</a></li>
+      <li><a href="#permissions">App Permissions</a></li>
+      <li><a href="#advertising">Advertising (AdMob)</a></li>
+      <li><a href="#data-sharing">Data Sharing</a></li>
+      <li><a href="#data-storage">Data Storage & Security</a></li>
+      <li><a href="#eu-gdpr">GDPR & EU Users</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#user-rights">Your Rights</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Overview -->
+  <section id="overview">
+    <span class="section-number">01 — Overview</span>
+    <h2>Our Commitment to Your Privacy</h2>
+    <p>This Privacy Policy describes how <strong>HabitSetu</strong> ("we," "our," or "the app") handles information when you use our Android application. We are committed to being transparent about our data practices.</p>
+    <p>This app does not require account registration or login. We do not collect your name, email address, phone number, or any personally identifiable information as part of normal app usage.</p>
+    <div class="highlight">
+      <strong>Plain language summary:</strong> Your habit data stays on your device. The only external data sharing occurs through Google AdMob (for displaying ads) and when you voluntarily contact our support team.
+    </div>
+  </section>
+
+  <!-- 2. Data Collected -->
+  <section id="data-collected">
+    <span class="section-number">02 — Data We Collect</span>
+    <h2>Information Collection & Use</h2>
+
+    <div class="card">
+      <span class="card-label">Habit Data (Local Only)</span>
+      <p>All habit information you create, edit, or delete — including habit names, schedules, and completion history — is stored exclusively in a local database on your device using Room Database. This data never leaves your device under normal app operation and is never transmitted to our servers.</p>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Device Information (Support Only — Voluntary)</span>
+      <p>When you tap "Contact Us," the following technical information is collected and included in your support request to help us diagnose issues:</p>
+      <ul class="data-list">
+        <li>App Version and Build Number</li>
+        <li>Device Model and Manufacturer</li>
+        <li>Android OS Version</li>
+        <li>Android SDK Version</li>
+        <li>Exported copy of your local habit database</li>
+      </ul>
+      <p style="margin-top:12px; font-size:14px; color: #777777;">This information is collected only when you explicitly initiate a support request. It is used solely for debugging and improving app functionality.</p>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Advertising Data (via Google AdMob)</span>
+      <p>Our app displays advertisements through Google AdMob. AdMob may automatically collect certain data to serve relevant ads. See Section 4 for full details.</p>
+    </div>
+  </section>
+
+  <!-- 3. Permissions -->
+  <section id="permissions">
+    <span class="section-number">03 — App Permissions</span>
+    <h2>Device Permissions Explained</h2>
+    <p>Our app requests the following Android permissions. Each permission is used only for the specific purpose described below:</p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>POST_NOTIFICATIONS</td>
+          <td>To send you habit reminders and alarm notifications at your scheduled times.</td>
+        </tr>
+        <tr>
+          <td>SCHEDULE_EXACT_ALARM</td>
+          <td>To schedule precise habit reminders at the exact times you define.</td>
+        </tr>
+        <tr>
+          <td>RECEIVE_BOOT_COMPLETED</td>
+          <td>To automatically restore your scheduled habit alarms after your device is restarted.</td>
+        </tr>
+        <tr>
+          <td>INTERNET</td>
+          <td>Used solely to load and display advertisements via Google AdMob.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>No permissions are used to collect, track, or transmit personal information beyond the stated purposes above.</p>
+  </section>
+
+  <!-- 4. Advertising -->
+  <section id="advertising">
+    <span class="section-number">04 — Advertising</span>
+    <h2>Google AdMob & Advertisements</h2>
+    <p>Our app uses <strong>Google AdMob</strong> to display interstitial advertisements. AdMob is a third-party advertising service provided by Google LLC.</p>
+
+    <div class="card">
+      <span class="card-label">Data AdMob May Collect</span>
+      <ul class="data-list">
+        <li>Advertising ID (Google Advertising Identifier / GAID)</li>
+        <li>Device identifiers and hardware information</li>
+        <li>IP address (used to derive approximate location)</li>
+        <li>App usage and interaction data</li>
+        <li>Diagnostic information</li>
+      </ul>
+    </div>
+
+    <p>AdMob's data collection and use is governed entirely by Google's Privacy Policy. We have no control over, and are not responsible for, the data practices of Google AdMob.</p>
+
+    <div class="highlight">
+      <strong>Google's Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
+    </div>
+
+    <div class="card">
+      <span class="card-label">EU / EEA Users — Personalized Ads & Consent</span>
+      <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you will be presented with a consent dialog when you first launch the app. This dialog allows you to choose whether to receive personalized or non-personalized advertisements, in compliance with the General Data Protection Regulation (GDPR).</p>
+      <p style="margin-top:10px;">Personalized ads will only be shown if you provide explicit consent. If you decline, non-personalized advertisements will be displayed instead. You may update your consent preferences at any time through your device settings.</p>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Opt-Out of Personalized Ads</span>
+      <p>You can opt out of interest-based advertising at any time by visiting your device's ad settings:</p>
+      <ul class="data-list">
+        <li>Android: Settings → Google → Ads → "Delete advertising ID" or "Opt out of Ads Personalization"</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Data Sharing -->
+  <section id="data-sharing">
+    <span class="section-number">05 — Data Sharing</span>
+    <h2>How We Share Information</h2>
+    <p>We do not sell, trade, rent, or otherwise transfer your personal information to third parties. The limited data sharing that occurs is as follows:</p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Recipient</th>
+          <th>Data Shared</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google AdMob</td>
+          <td>Device/ad identifiers, usage signals</td>
+          <td>Automatically during ad display</td>
+        </tr>
+        <tr>
+          <td>Support Team</td>
+          <td>Device info + habit database export</td>
+          <td>Only when YOU tap "Contact Us"</td>
+        </tr>
+        <tr>
+          <td>Any other party</td>
+          <td>None</td>
+          <td>Never</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We do not operate any external servers or cloud infrastructure. No habit data is ever transmitted to us automatically.</p>
+  </section>
+
+  <!-- 6. Data Storage -->
+  <section id="data-storage">
+    <span class="section-number">06 — Data Storage & Security</span>
+    <h2>How Your Data Is Stored</h2>
+    <p>All app data — including your habits, schedules, and preferences — is stored locally on your device using Android's Room Database (SQLite). This means:</p>
+    <ul class="data-list">
+      <li>Your data exists only on your physical device</li>
+      <li>We do not operate any servers, databases, or cloud storage</li>
+      <li>Your data is protected by your device's built-in security (PIN, biometrics, encryption)</li>
+      <li>Uninstalling the app permanently deletes all associated data from your device</li>
+    </ul>
+    <div class="highlight">
+      <strong>Note:</strong> Because all data is stored locally, we cannot recover your data if your device is lost, reset, or if you uninstall the app. We recommend backing up your device regularly.
+    </div>
+  </section>
+
+  <!-- 7. GDPR -->
+  <section id="eu-gdpr">
+    <span class="section-number">07 — GDPR & EU Users</span>
+    <h2>European Privacy Rights</h2>
+    <p>If you are a resident of the European Economic Area (EEA), United Kingdom, or Switzerland, you have specific rights under the General Data Protection Regulation (GDPR) and equivalent local laws.</p>
+
+    <div class="card">
+      <span class="card-label">Your GDPR Rights</span>
+      <ul class="data-list">
+        <li><strong style="color:#000000">Right of Access</strong> — You may request a copy of any data we hold about you</li>
+        <li><strong style="color:#000000">Right to Erasure</strong> — You may request deletion of your data at any time</li>
+        <li><strong style="color:#000000">Right to Withdraw Consent</strong> — You may withdraw advertising consent at any time via device settings</li>
+        <li><strong style="color:#000000">Right to Object</strong> — You may object to the processing of your data for advertising purposes</li>
+      </ul>
+    </div>
+
+    <p>Since we do not store personal data on our servers, most of these rights can be exercised directly on your device by clearing app data or uninstalling the application. For advertising-related rights, please refer to Google's privacy controls.</p>
+    <p>The legal basis for processing your data through AdMob in the EEA is your explicit consent, obtained through the in-app consent dialog upon first launch.</p>
+  </section>
+
+  <!-- 8. Children -->
+  <section id="children">
+    <span class="section-number">08 — Children's Privacy</span>
+    <h2>Children Under 13</h2>
+    <p>Our app is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13 years of age.</p>
+    <p>If you are a parent or guardian and believe your child has used our app or provided personal information, please contact us immediately at the address below and we will take appropriate steps to address the situation.</p>
+    <p>Our advertising implementation does not use child-directed ad settings as this app is intended for general audiences aged 13 and above.</p>
+  </section>
+
+  <!-- 9. User Rights -->
+  <section id="user-rights">
+    <span class="section-number">09 — Your Rights</span>
+    <h2>Managing & Deleting Your Data</h2>
+
+    <div class="card">
+      <span class="card-label">Delete All App Data</span>
+      <p>You can delete all data associated with this app at any time using either of these methods:</p>
+      <ul class="data-list">
+        <li><strong style="color:#000000">Uninstall the app</strong> — Permanently removes all local data from your device</li>
+        <li><strong style="color:#000000">Clear app data</strong> — Settings → Apps → Habit Tracker → Storage → Clear Data</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Manage Ad Preferences</span>
+      <ul class="data-list">
+        <li>Android Settings → Google → Ads → Delete Advertising ID</li>
+        <li>Visit <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a> to manage Google ad personalization</li>
+      </ul>
+    </div>
+
+    <p>Since no account or login exists in our app, there is no account deletion process required.</p>
+  </section>
+
+  <!-- 10. Contact -->
+  <section id="contact">
+    <span class="section-number">10 — Contact</span>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+
+    <div class="card">
+      <span class="card-label">Developer Contact</span>
+      <ul class="data-list">
+        <li><strong style="color:#000000">Email:</strong> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0f9eff5f2ffe5ede1e9ece0c7cdc1c9cc8ec3cfcd">jaythanki.ce@gmail.com</a>]</li>
+        <li><strong style="color:#000000">App Name:</strong> HabitSetu</li>
+        <li><strong style="color:#000000">Developer Name:</strong>Jaykumar Jitesh Thanki</li>
+        <li><strong style="color:#000000">Country:</strong> India</li>
+      </ul>
+    </div>
+
+    <p>We will respond to all legitimate privacy inquiries within 30 days.</p>
+
+    <div class="highlight">
+      <strong>Policy Updates:</strong> We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last Updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-line"></div>
+    <div class="footer-app">Habit Tracker</div>
