@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy — Habit Tracker</title>
+  <title>Privacy Policy — HabitSetu</title>
   <style>
     :root {
       --bg: #ffffff;
       --surface: #f5f5f5;
       --border: #dddddd;
       --accent: #000000;
-      --accent-soft: #f0f0f0;
       --text-primary: #000000;
       --text-secondary: #333333;
       --text-muted: #777777;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -30,13 +28,9 @@
       min-height: 100vh;
     }
 
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 28px; }
 
-    /* Header */
+    /* ── Header ── */
     header {
       padding: 60px 0 40px;
       border-bottom: 1px solid #cccccc;
@@ -52,32 +46,24 @@
       border-radius: 4px;
       padding: 4px 12px;
       font-size: 12px;
-      font-family: Arial, Helvetica, sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #555555;
       margin-bottom: 20px;
     }
-
     .app-badge::before {
       content: '';
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: #000000;
     }
 
     h1 {
-      font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(28px, 5vw, 40px);
       font-weight: 700;
       line-height: 1.2;
       color: #000000;
       margin-bottom: 20px;
-    }
-
-    h1 span {
-      color: #000000;
     }
 
     .meta {
@@ -88,14 +74,9 @@
       color: #777777;
       letter-spacing: 0.04em;
     }
+    .meta span { display: flex; align-items: center; gap: 6px; }
 
-    .meta span {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* TOC */
+    /* ── TOC ── */
     .toc {
       background: #f5f5f5;
       border: 1px solid #cccccc;
@@ -103,9 +84,7 @@
       padding: 24px 28px;
       margin-bottom: 48px;
     }
-
     .toc-title {
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -113,7 +92,6 @@
       font-weight: 700;
       margin-bottom: 16px;
     }
-
     .toc ol {
       list-style: none;
       counter-reset: toc;
@@ -121,55 +99,39 @@
       grid-template-columns: 1fr 1fr;
       gap: 6px 32px;
     }
-
-    @media (max-width: 520px) {
-      .toc ol { grid-template-columns: 1fr; }
-    }
-
+    @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
     .toc li {
       counter-increment: toc;
       font-size: 14px;
       color: #333333;
     }
-
     .toc li::before {
       content: counter(toc, decimal-leading-zero) ". ";
       color: #777777;
       font-size: 11px;
       margin-right: 4px;
     }
-
-    .toc a {
-      color: #333333;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .toc a { color: #333333; text-decoration: none; transition: color 0.2s; }
     .toc a:hover { color: #000000; }
 
-    /* Sections */
+    /* ── Sections ── */
     section {
       margin-bottom: 60px;
       padding-bottom: 60px;
       border-bottom: 1px solid #cccccc;
     }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
+    section:last-of-type { border-bottom: none; }
 
     .section-number {
       font-size: 11px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #555555;
-      font-family: Arial, Helvetica, sans-serif;
       margin-bottom: 10px;
       display: block;
     }
 
     h2 {
-      font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(18px, 3vw, 22px);
       font-weight: 700;
       color: #000000;
@@ -182,10 +144,9 @@
       margin-bottom: 16px;
       font-size: 15px;
     }
-
     p:last-child { margin-bottom: 0; }
 
-    /* Info cards */
+    /* ── Cards ── */
     .card {
       background: #f5f5f5;
       border: 1px solid #dddddd;
@@ -193,7 +154,6 @@
       padding: 20px 24px;
       margin: 20px 0;
     }
-
     .card-label {
       font-size: 11px;
       letter-spacing: 0.1em;
@@ -204,14 +164,13 @@
       display: block;
     }
 
-    /* Permission table */
+    /* ── Tables ── */
     .perm-table {
       width: 100%;
       border-collapse: collapse;
       margin: 24px 0;
       font-size: 14px;
     }
-
     .perm-table th {
       text-align: left;
       padding: 10px 16px;
@@ -223,16 +182,13 @@
       font-weight: 700;
       background: #f5f5f5;
     }
-
     .perm-table td {
       padding: 12px 16px;
       border-bottom: 1px solid #dddddd;
       color: #333333;
       vertical-align: top;
     }
-
     .perm-table tr:last-child td { border-bottom: none; }
-
     .perm-table td:first-child {
       font-family: monospace;
       font-size: 12px;
@@ -242,7 +198,7 @@
       padding-right: 24px;
     }
 
-    /* Highlight box */
+    /* ── Highlight boxes ── */
     .highlight {
       background: #f5f5f5;
       border: 1px solid #cccccc;
@@ -253,51 +209,14 @@
       font-size: 15px;
       color: #333333;
     }
+    .highlight strong { color: #000000; font-weight: 700; }
 
-    .highlight strong {
-      color: #000000;
-      font-weight: 700;
-    }
-
-    /* Links */
-    a {
-      color: #000000;
-      text-decoration: underline;
-    }
-
+    /* ── Links ── */
+    a { color: #000000; text-decoration: underline; }
     a:hover { color: #555555; }
 
-    /* Footer */
-    footer {
-      padding: 48px 0 64px;
-      text-align: center;
-    }
-
-    .footer-line {
-      width: 40px;
-      height: 1px;
-      background: #cccccc;
-      margin: 0 auto 32px;
-    }
-
-    .footer-app {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: #000000;
-      margin-bottom: 8px;
-    }
-
-    .footer-copy {
-      font-size: 13px;
-      color: #777777;
-    }
-
-    ul.data-list {
-      list-style: none;
-      margin: 16px 0;
-    }
-
+    /* ── Data lists ── */
+    ul.data-list { list-style: none; margin: 16px 0; }
     ul.data-list li {
       padding: 8px 0 8px 20px;
       position: relative;
@@ -305,9 +224,7 @@
       font-size: 15px;
       border-bottom: 1px solid #dddddd;
     }
-
     ul.data-list li:last-child { border-bottom: none; }
-
     ul.data-list li::before {
       content: '—';
       position: absolute;
@@ -315,21 +232,29 @@
       color: #000000;
       font-size: 12px;
     }
+
+    /* ── Footer ── */
+    footer { padding: 48px 0 64px; text-align: center; }
+    .footer-line { width: 40px; height: 1px; background: #cccccc; margin: 0 auto 32px; }
+    .footer-app { font-size: 16px; font-weight: 700; color: #000000; margin-bottom: 8px; }
+    .footer-copy { font-size: 13px; color: #777777; }
   </style>
 </head>
 <body>
 <div class="container">
 
+  <!-- ════════════════ HEADER ════════════════ -->
   <header>
     <div class="app-badge">HabitSetu App</div>
-    <h1>Privacy <span>Policy</span></h1>
+    <h1>Privacy Policy</h1>
     <div class="meta">
-      <span>Effective Date: 11 March 2026</span>
+      <span>📅 Effective Date: 11 March 2026</span>
       <span>🔄 Last Updated: 11 March 2026</span>
       <span>📍 Version 1.0</span>
     </div>
   </header>
 
+  <!-- ════════════════ TOC ════════════════ -->
   <nav class="toc">
     <div class="toc-title">Table of Contents</div>
     <ol>
@@ -338,43 +263,48 @@
       <li><a href="#permissions">App Permissions</a></li>
       <li><a href="#advertising">Advertising (AdMob)</a></li>
       <li><a href="#data-sharing">Data Sharing</a></li>
-      <li><a href="#data-storage">Data Storage & Security</a></li>
-      <li><a href="#eu-gdpr">GDPR & EU Users</a></li>
+      <li><a href="#data-storage">Data Storage &amp; Security</a></li>
+      <li><a href="#eu-gdpr">GDPR &amp; EU Users</a></li>
       <li><a href="#children">Children's Privacy</a></li>
       <li><a href="#user-rights">Your Rights</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ol>
   </nav>
 
-  <!-- 1. Overview -->
+  <!-- ════════════════ 01 — OVERVIEW ════════════════ -->
   <section id="overview">
     <span class="section-number">01 — Overview</span>
     <h2>Our Commitment to Your Privacy</h2>
+
     <p>This Privacy Policy describes how <strong>HabitSetu</strong> ("we," "our," or "the app") handles information when you use our Android application. We are committed to being transparent about our data practices.</p>
+
     <p>This app does not require account registration or login. We do not collect your name, email address, phone number, or any personally identifiable information as part of normal app usage.</p>
+
     <div class="highlight">
-  <strong>Data Usage Clarification:</strong>
-  We do not sell your personal data to any third parties. We also do not use your data to track you across apps or services outside of this app. However, Google AdMob and its partners may process certain data for advertising purposes based on your consent choices.
-</div>
+      <strong>Data Usage Clarification:</strong> We do not sell your personal data to any third parties. We do not use your data to track you across apps or services outside of this app. The only external data sharing occurs through Google AdMob (for displaying ads) and when you voluntarily contact our support team.
+    </div>
+
     <div class="highlight">
-      <strong>Plain language summary:</strong> Your habit data and activity logs stay on your device. Logs older than 7 days are automatically deleted to keep the app lean. The only external data sharing occurs through Google AdMob and its advertising partners participating in the IAB Transparency & Consent Framework (for displaying ads) and when you voluntarily contact our support team. EEA/UK/Swiss users are shown a consent dialog on first launch. Users can choose to consent to all purposes or use the "Manage options" screen to customize or decline individual data processing purposes and partners. Some ad partners may process data under legitimate interest by default, which you can object to via "Manage options."
+      <strong>Plain language summary:</strong> Your habit data and activity logs stay on your device. Logs older than 7 days are automatically deleted to keep the app lean. EEA/UK/Swiss users are shown a consent dialog on first launch and can customise or decline individual data processing purposes via the "Manage options" screen. Some ad partners may process data under legitimate interest by default, which you can object to via "Manage options."
     </div>
   </section>
 
-  <!-- 2. Data Collected -->
+  <!-- ════════════════ 02 — DATA COLLECTED ════════════════ -->
   <section id="data-collected">
     <span class="section-number">02 — Data We Collect</span>
-    <h2>Information Collection & Use</h2>
+    <h2>Information Collection &amp; Use</h2>
 
+    <!-- Habit data -->
     <div class="card">
       <span class="card-label">Habit Data (Local Only)</span>
       <p>All habit information you create, edit, or delete — including habit names, schedules, and completion history — is stored exclusively in a local database on your device using Room Database. This data never leaves your device under normal app operation and is never transmitted to our servers.</p>
     </div>
 
+    <!-- Activity logs -->
     <div class="card">
       <span class="card-label">Activity Logs (Local Only — Auto-Pruned)</span>
       <p>The app maintains a local activity logs table within the Room Database to record in-app events and user interactions (such as habit completions, edits, and reminders triggered). This data is used solely to support app functionality and is never transmitted off your device.</p>
-      <p style="margin-top:10px;">To keep the app's storage footprint small, a background task (Android WorkManager) runs automatically once per day to permanently delete any log entries older than 7 days. No manual action is required from you — this pruning happens silently in the background.</p>
+      <p style="margin-top:10px;">To keep the app's storage footprint small, a background task (Android WorkManager) runs automatically once per day to permanently delete any log entries older than 7 days. No manual action is required.</p>
       <ul class="data-list" style="margin-top:12px;">
         <li>Logs are stored only in your device's local Room Database</li>
         <li>Log entries are automatically purged after 7 days</li>
@@ -383,26 +313,36 @@
       </ul>
     </div>
 
+    <!-- Contact Us / device info -->
     <div class="card">
       <span class="card-label">Device Information (Support Only — Voluntary)</span>
-      <p>When you tap "Contact Us," the following technical information is collected and included in your support request to help us diagnose issues:</p>
+      <p>When you tap "Contact Us," your device's email app opens with the following information pre-populated in the <strong>email body</strong> to help us diagnose issues:</p>
       <ul class="data-list">
-        <li>App Version and Build Number</li>
-        <li>Device Model and Manufacturer</li>
+        <li>App Version</li>
+        <li>Build Number</li>
+        <li>Device Model</li>
+        <li>Manufacturer</li>
         <li>Android OS Version</li>
         <li>Android SDK Version</li>
-        <li>Exported copy of your local habit database (only if you choose to include it in your support request)</li>
+        <li>Timestamp of the support request</li>
+        <li>A zip file of your local habit database — attached to the email</li>
       </ul>
-      <p style="margin-top:12px; font-size:14px; color: #777777;">This information is collected only when you explicitly initiate a support request. It is used solely for debugging and improving app functionality.</p>
+      <p style="margin-top:12px; font-size:14px; color:#777777;">This information is pre-filled for your convenience but is only sent if you actively tap <strong>Send</strong> in your email app. It is used solely for debugging and improving app functionality and is never shared with any third party.</p>
+      <div style="margin-top:12px; padding-top:12px; border-top:1px solid #dddddd;">
+        <p style="font-size:14px; color:#555555; margin-bottom:0;">
+          <strong style="color:#000000;">How "Contact Us" works:</strong> Tapping "Contact Us" triggers an Android email intent that opens your installed email app. The device and app details above are pre-filled as plain text in the email body, and your habit database is included as a <strong>.zip file attachment</strong>. The app does <em>not</em> transmit any data automatically or in the background. Nothing is sent unless you actively tap Send in your email app.
+        </p>
+      </div>
     </div>
 
+    <!-- AdMob pointer -->
     <div class="card">
       <span class="card-label">Advertising Data (via Google AdMob)</span>
       <p>Our app displays advertisements through Google AdMob. AdMob may automatically collect certain data to serve relevant ads. See Section 4 for full details.</p>
     </div>
   </section>
 
-  <!-- 3. Permissions -->
+  <!-- ════════════════ 03 — PERMISSIONS ════════════════ -->
   <section id="permissions">
     <span class="section-number">03 — App Permissions</span>
     <h2>Device Permissions Explained</h2>
@@ -430,122 +370,107 @@
         </tr>
         <tr>
           <td>INTERNET</td>
-          <td>Used to load and display advertisements via Google AdMob and to load external web pages such as the Privacy Policy within the app.</td>
+          <td>To load and display advertisements via Google AdMob and to open external web pages such as this Privacy Policy within the app.</td>
         </tr>
       </tbody>
     </table>
 
+    <div class="highlight">
+      <strong>No Location Permissions:</strong> This app does <strong>not</strong> request <code>ACCESS_FINE_LOCATION</code> or <code>ACCESS_COARSE_LOCATION</code>. We never access GPS or network-based precise location data. Approximate location used by AdMob is derived solely from your device's IP address by Google's servers — the app itself does not read or transmit your location.
+    </div>
+
     <p>No permissions are used to collect, track, or transmit personal information beyond the stated purposes above.</p>
   </section>
 
-<!-- 4. Advertising -->
-<section id="advertising">
-  <span class="section-number">04 — Advertising</span>
-  <h2>Google AdMob & Advertisements</h2>
+  <!-- ════════════════ 04 — ADVERTISING ════════════════ -->
+  <section id="advertising">
+    <span class="section-number">04 — Advertising</span>
+    <h2>Google AdMob &amp; Advertisements</h2>
 
-  <p>Our app displays advertisements using <strong>Google AdMob</strong>, a mobile advertising platform provided by Google LLC. AdMob uses the <strong>Google Mobile Ads SDK</strong> to load and display advertisements inside the app.</p>
+    <p>Our app displays advertisements using <strong>Google AdMob</strong>, a mobile advertising platform provided by Google LLC. AdMob uses the <strong>Google Mobile Ads SDK</strong> to load and display advertisements inside the app.</p>
 
-  <p>When ads are shown, certain data may be automatically collected and processed by Google and its advertising partners participating in the <strong>IAB Europe Transparency & Consent Framework (TCF)</strong> in order to serve ads, measure advertising performance, and prevent fraud.</p>
-<p>
-Advertisements are only requested after obtaining the required user consent in applicable regions.
-</p>
-  <div class="card">
-    <span class="card-label">Data AdMob & Ad Partners May Collect</span>
-    <ul class="data-list">
-      <li>Advertising ID (Google Advertising Identifier / GAID)</li>
-      <li>Device identifiers and hardware information</li>
-      <li>IP address (used to derive approximate location)</li>
-     <li>Approximate location derived from IP address</li>
-<li>
-  Precise device location (GPS/network-based, within a radius of less than 
-  500 meters) — <strong>only if you explicitly enable it</strong> via the 
-  "Manage options" screen in the consent dialog. This is OFF by default 
-  and is never activated by simply tapping "Consent."
-</li>
-      <li>Cookies and information stored on or accessed from your device</li>
-      <li>App usage and interaction data</li>
-      <li>Diagnostic information and crash signals</li>
-    </ul>
-  </div>
-<div class="highlight">
-<p>
-Google AdMob acts as an independent data controller for advertising data. Their data practices are governed by their own privacy policies, and we encourage users to review them.
-</p>
+    <p>When ads are shown, certain data may be automatically collected and processed by Google and its advertising partners participating in the <strong>IAB Europe Transparency &amp; Consent Framework (TCF)</strong> in order to serve ads, measure advertising performance, and prevent fraud.</p>
 
-</div>
+    <p>Advertisements are only requested after obtaining the required user consent in applicable regions.</p>
 
-  <div class="highlight">
-    <strong>Google Privacy Policy:</strong>
-    <a href="https://policies.google.com/privacy" target="_blank">
-      https://policies.google.com/privacy
-    </a>
-    <br/><br/>
-    <strong>How Google uses data from apps that use its services:</strong>
-    <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
-      https://policies.google.com/technologies/partner-sites
-    </a>
-  </div>
+    <div class="card">
+      <span class="card-label">Data AdMob &amp; Ad Partners May Collect</span>
+      <ul class="data-list">
+        <li>Advertising ID (Google Advertising Identifier / GAID)</li>
+        <li>Device identifiers and hardware information</li>
+        <li>IP address (used to derive approximate location)</li>
+        <li>Approximate location derived from IP address</li>
+        <li>Cookies and information stored on or accessed from your device</li>
+        <li>App usage and interaction data</li>
+        <li>Diagnostic information and crash signals</li>
+      </ul>
+      <div style="margin-top:14px; padding-top:12px; border-top:1px solid #dddddd;">
+        <p style="font-size:14px; color:#555555; margin-bottom:0;">
+          <strong style="color:#000000;">Precise location is never collected.</strong>
+          This app does not request any location permission (<code>ACCESS_FINE_LOCATION</code> or <code>ACCESS_COARSE_LOCATION</code>). GPS or network-based precise location data is therefore never available to AdMob or any other SDK through this app.
+        </p>
+      </div>
+    </div>
 
-  <div class="card">
-    <span class="card-label">EU / EEA Users — Consent Dialog (IAB TCF)</span>
+    <div class="highlight">
+      <p>Google AdMob acts as an independent data controller for advertising data. Their data practices are governed by their own privacy policies, and we encourage you to review them.</p>
+    </div>
 
-    <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you will be shown a consent dialog when you first launch the app in order to comply with the General Data Protection Regulation (GDPR) and Google's EU User Consent Policy.</p>
+    <div class="highlight">
+      <strong>Google Privacy Policy:</strong>
+      <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a><br/><br/>
+      <strong>How Google uses data from apps that use its services:</strong>
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank">https://policies.google.com/technologies/partner-sites</a>
+    </div>
 
-    <p style="margin-top:10px;">The consent dialog asks for permission for the following purposes:</p>
+    <div class="card">
+      <span class="card-label">EU / EEA Users — Consent Dialog (IAB TCF)</span>
+      <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you will be shown a consent dialog when you first launch the app in order to comply with the General Data Protection Regulation (GDPR) and Google's EU User Consent Policy.</p>
+      <p style="margin-top:10px;">The consent dialog asks for permission for the following purposes:</p>
+      <ul class="data-list" style="margin-top:8px;">
+        <li>Personalised advertising and content</li>
+        <li>Advertising and content measurement</li>
+        <li>Audience research and service improvement</li>
+        <li>Storing and/or accessing information on your device</li>
+      </ul>
+      <p style="margin-top:12px;">Users may choose to consent to all purposes or use the <strong>"Manage options"</strong> screen to customise or decline individual processing purposes and vendors.</p>
+      <p style="margin-top:12px;">You can revisit and modify your consent choices at any time through the privacy settings available within the app.</p>
+    </div>
 
-    <ul class="data-list" style="margin-top:8px;">
-      <li>Personalised advertising and content</li>
-      <li>Advertising and content measurement</li>
-      <li>Audience research and service improvement</li>
-      <li>Storing and/or accessing information on your device</li>
-    </ul>
+    <div class="card">
+      <span class="card-label">Legitimate Interest Processing</span>
+      <p>Some advertising partners may rely on <strong>legitimate interest</strong> as a legal basis under GDPR to process certain data for purposes such as fraud prevention, ad delivery, or measurement.</p>
+      <p style="margin-top:10px;">Where applicable, legitimate interest processing may be enabled by default in the consent message. You can review and object to such processing through the <strong>"Manage options"</strong> screen within the consent dialog.</p>
+    </div>
 
-    <p style="margin-top:12px;">Users may choose to consent to all purposes or use the <strong>"Manage options"</strong> screen to customize or decline individual processing purposes and vendors.</p>
-    
-      <p style="margin-top:12px;">
-Users can revisit and modify their consent choices at any time through the privacy settings available within the app.
-</p>
-  </div>
+    <div class="card">
+      <span class="card-label">RTB (Real-Time Bidding) Partner Creatives</span>
+      <p>Our AdMob configuration includes a consent verification check for Real-Time Bidding (RTB) partners, including Authorised Buyers and Open Bidding partners. Google will automatically block ad creatives from partners that do not have valid user consent before displaying them in the app.</p>
+    </div>
 
-  <div class="card">
-    <span class="card-label">Legitimate Interest Processing</span>
+    <div class="card">
+      <span class="card-label">Opt-Out of Personalised Ads</span>
+      <p>You can control or reset your advertising identifier and opt out of personalised advertising at any time:</p>
+      <ul class="data-list">
+        <li>Android: Settings → Google → Ads → "Delete advertising ID" or "Opt out of Ads Personalisation"</li>
+        <li>Visit <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a> to manage Google ad personalisation</li>
+      </ul>
+    </div>
 
-<p>
-Some advertising partners may rely on <strong>legitimate interest</strong> as a legal basis under GDPR to process certain data for purposes such as fraud prevention, ad delivery, or measurement.
-</p>
-    <p style="margin-top:10px;">Where applicable, legitimate interest processing may be enabled by default in the consent message. Users can review and object to such processing through the <strong>"Manage options"</strong> screen within the consent dialog.</p>
-  </div>
+    <div class="highlight">
+      <strong>Tracking Disclosure:</strong> While this app itself does not track users across apps, Google AdMob and its partners may use data for personalised advertising depending on your consent preferences.
+    </div>
 
-  <div class="card">
-    <span class="card-label">RTB (Real-Time Bidding) Partner Creatives</span>
+    <div class="highlight">
+      <strong>Non-Personalised Ads:</strong> If you choose not to consent to personalised advertising, you may still see ads. These will be non-personalised and based on contextual information rather than your personal data.
+    </div>
+  </section>
 
-    <p>Our AdMob configuration includes a consent verification check for Real-Time Bidding (RTB) partners, including Authorised Buyers and Open Bidding partners. Google will automatically block ad creatives from partners that do not have valid user consent before displaying them in the app.</p>
-  </div>
-
-  <div class="card">
-    <span class="card-label">Opt-Out of Personalized Ads</span>
-
-    <p>You can control or reset your advertising identifier and opt out of personalized advertising at any time:</p>
-
-    <ul class="data-list">
-      <li>Android: Settings → Google → Ads → "Delete advertising ID" or "Opt out of Ads Personalization"</li>
-      <li>Visit <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a> to manage Google ad personalization</li>
-    </ul>
-  </div>
-
-  <div class="highlight">
-  <strong>Tracking Disclosure:</strong>
-  While this app itself does not track users across apps, Google AdMob and its partners may use data for personalized advertising depending on your consent preferences.
-</div>
-<div class="highlight">
-  <strong>Non-Personalized Ads:</strong>
-  If you choose not to consent to personalized advertising, you may still see ads. These ads will be non-personalized and based on contextual information rather than your personal data.
-</div>
-</section>
-  <!-- 5. Data Sharing -->
+  <!-- ════════════════ 05 — DATA SHARING ════════════════ -->
   <section id="data-sharing">
     <span class="section-number">05 — Data Sharing</span>
     <h2>How We Share Information</h2>
+
     <p>We do not sell, trade, rent, or otherwise transfer your personal information to third parties. The limited data sharing that occurs is as follows:</p>
 
     <table class="perm-table">
@@ -559,24 +484,18 @@ Some advertising partners may rely on <strong>legitimate interest</strong> as a 
       <tbody>
         <tr>
           <td>Google AdMob</td>
-          <td>Advertising ID, device identifiers, usage signals, approximate location derived from IP address</td>
+          <td>Advertising ID (GAID), device identifiers, app interaction data, diagnostic signals, approximate location derived from IP address</td>
           <td>Automatically during ad display</td>
         </tr>
-       
-       <tr>
-      <td>Google AdMob</td>
-      <td>Precise location (&lt; 500 meters)</td>
-      <td>Only if user explicitly opts in via "Manage options"</td>
-    </tr>
         <tr>
           <td>AdMob Advertising Partners (IAB TCF)</td>
-          <td>Device/ad identifiers, usage signals (via AdMob network)</td>
+          <td>Device and ad identifiers, usage signals (via AdMob network)</td>
           <td>Automatically during ad display; some partners operate under legitimate interest</td>
         </tr>
         <tr>
-          <td>Support Team</td>
-          <td>Device info + habit database export</td>
-          <td>Only when YOU tap "Contact Us"</td>
+          <td>Support Team (Developer)</td>
+          <td>App version, build number, device model, manufacturer, Android OS version, SDK version, timestamp (email body) + habit database zip file (email attachment)</td>
+          <td>Only when you explicitly tap "Contact Us" and actively tap Send in your email app</td>
         </tr>
         <tr>
           <td>Any other party</td>
@@ -587,16 +506,19 @@ Some advertising partners may rely on <strong>legitimate interest</strong> as a 
     </table>
 
     <p>We do not operate any external servers or cloud infrastructure. No habit data or activity logs are ever transmitted to us automatically.</p>
+
     <div class="highlight">
-  <strong>No Sale of Data:</strong> We do not sell your personal data to any third parties under any circumstances.
-</div>
+      <strong>No Sale of Data:</strong> We do not sell your personal data to any third parties under any circumstances.
+    </div>
   </section>
 
-  <!-- 6. Data Storage -->
+  <!-- ════════════════ 06 — DATA STORAGE ════════════════ -->
   <section id="data-storage">
-    <span class="section-number">06 — Data Storage & Security</span>
+    <span class="section-number">06 — Data Storage &amp; Security</span>
     <h2>How Your Data Is Stored</h2>
+
     <p>All app data — including your habits, schedules, preferences, and activity logs — is stored locally on your device using Android's Room Database (SQLite). This means:</p>
+
     <ul class="data-list">
       <li>Your data exists only on your physical device</li>
       <li>We do not operate any servers, databases, or cloud storage</li>
@@ -607,7 +529,7 @@ Some advertising partners may rely on <strong>legitimate interest</strong> as a 
     <div class="card">
       <span class="card-label">Automatic Log Pruning via WorkManager</span>
       <p>To keep the app's storage usage minimal, we use <strong>Android WorkManager</strong> to run a periodic background task approximately every 24 hours. This task automatically deletes activity log entries that are older than 7 days from the local Room Database.</p>
-      <p style="margin-top:10px;">This process runs entirely on-device, requires no network access, and involves no transmission of data. It is purely a housekeeping operation to prevent the logs table from growing indefinitely over time.</p>
+      <p style="margin-top:10px;">This process runs entirely on-device, requires no network access, and involves no transmission of data. It is purely a housekeeping operation to prevent the logs table from growing indefinitely.</p>
       <ul class="data-list" style="margin-top:12px;">
         <li>Pruning runs automatically — no action required from you</li>
         <li>Only log entries older than 7 days are deleted</li>
@@ -621,88 +543,90 @@ Some advertising partners may rely on <strong>legitimate interest</strong> as a 
     </div>
   </section>
 
-  <!-- 7. GDPR -->
+  <!-- ════════════════ 07 — GDPR ════════════════ -->
   <section id="eu-gdpr">
-    <span class="section-number">07 — GDPR & EU Users</span>
+    <span class="section-number">07 — GDPR &amp; EU Users</span>
     <h2>European Privacy Rights</h2>
+
     <p>If you are a resident of the European Economic Area (EEA), United Kingdom, or Switzerland, you have specific rights under the General Data Protection Regulation (GDPR) and equivalent local laws.</p>
 
     <div class="card">
       <span class="card-label">Your GDPR Rights</span>
       <ul class="data-list">
-     <li>
-<strong style="color:#000000">Right of Access</strong> — Since we do not store personal data on our servers, we do not hold any user data that can be accessed or exported by us. Advertising-related data is processed by Google AdMob.
-</li>
-        <li><strong style="color:#000000">Right to Erasure</strong> — You may request deletion of your data at any time</li>
-        <li><strong style="color:#000000">Right to Withdraw Consent</strong> — You may withdraw advertising consent at any time via the "Manage options" screen in the consent dialog or via your device settings</li>
-        <li><strong style="color:#000000">Right to Object</strong> — You may object to processing based on legitimate interest for each ad partner individually via the "Manage options" screen</li>
+        <li><strong style="color:#000000;">Right of Access</strong> — Since we do not store personal data on our servers, we do not hold any user data that can be accessed or exported by us. Advertising-related data is processed by Google AdMob.</li>
+        <li><strong style="color:#000000;">Right to Erasure</strong> — You may delete all app data at any time by clearing app data or uninstalling the app.</li>
+        <li><strong style="color:#000000;">Right to Withdraw Consent</strong> — You may withdraw advertising consent at any time via the "Manage options" screen in the consent dialog or via your device settings.</li>
+        <li><strong style="color:#000000;">Right to Object</strong> — You may object to processing based on legitimate interest for each ad partner individually via the "Manage options" screen.</li>
       </ul>
     </div>
 
-    <p>Since we do not store personal data on our servers, most of these rights can be exercised directly on your device by clearing app data or uninstalling the application. For advertising-related rights, please refer to Google's privacy controls or use the in-app consent management screen.</p>
+    <p>Since we do not store personal data on our servers, most of these rights can be exercised directly on your device by clearing app data or uninstalling the application. For advertising-related rights, refer to Google's privacy controls or use the in-app consent management screen.</p>
 
     <div class="card">
-      <span class="card-label">Legal Bases for Processing (EEA/UK/Switzerland)</span>
+      <span class="card-label">Legal Bases for Processing (EEA / UK / Switzerland)</span>
       <ul class="data-list">
-        <li><strong style="color:#000000">Consent</strong> — Personalised advertising and content measurement purposes require your explicit consent, given through the in-app IAB TCF consent dialog on first launch</li>
-      <li>
-<strong style="color:#000000">Legitimate Interest</strong> — Some ad partners may process data under legitimate interest. You can review and object to such processing via the "Manage options" screen.
-</li>
-        <li><strong style="color:#000000">Explicit Consent (Special Feature 1)</strong> — Precise location data for advertising — requires manual opt-in via "Manage options," separate from the main consent</li>
+        <li><strong style="color:#000000;">Consent</strong> — Personalised advertising and content measurement require your explicit consent, given through the in-app IAB TCF consent dialog on first launch.</li>
+        <li><strong style="color:#000000;">Legitimate Interest</strong> — Some ad partners may process data under legitimate interest. You can review and object to such processing via the "Manage options" screen.</li>
       </ul>
+      <div style="margin-top:12px; padding-top:12px; border-top:1px solid #dddddd;">
+        <p style="font-size:14px; color:#555555; margin-bottom:0;">
+          <strong style="color:#000000;">Note on location:</strong> This app does not collect or transmit precise location data — no location permission is requested. Approximate location (IP-derived) is processed by Google AdMob under the legal bases above.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- 8. Children -->
+  <!-- ════════════════ 08 — CHILDREN ════════════════ -->
   <section id="children">
     <span class="section-number">08 — Children's Privacy</span>
     <h2>Children Under 13</h2>
+
     <p>Our app is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13 years of age.</p>
+
     <p>If you are a parent or guardian and believe your child has used our app or provided personal information, please contact us immediately at the address below and we will take appropriate steps to address the situation.</p>
-    <p>Our advertising implementation does not use child-directed ad settings as this app is intended for general audiences aged 13 and above.</p>
-    <p>
-We do not knowingly request or serve personalized ads to users identified as children.
-</p>
+
+    <p>Our advertising implementation does not use child-directed ad settings as this app is intended for general audiences aged 13 and above. We do not knowingly request or serve personalised ads to users identified as children.</p>
   </section>
 
-  <!-- 9. User Rights -->
+  <!-- ════════════════ 09 — USER RIGHTS ════════════════ -->
   <section id="user-rights">
     <span class="section-number">09 — Your Rights</span>
-    <h2>Managing & Deleting Your Data</h2>
+    <h2>Managing &amp; Deleting Your Data</h2>
 
     <div class="card">
       <span class="card-label">Delete All App Data</span>
       <p>You can delete all data associated with this app — including habits, schedules, and activity logs — at any time using either of these methods:</p>
       <ul class="data-list">
-        <li><strong style="color:#000000">Uninstall the app</strong> — Permanently removes all local data from your device</li>
-        <li><strong style="color:#000000">Clear app data</strong> — Settings → Apps → Habit Tracker → Storage → Clear Data</li>
+        <li><strong style="color:#000000;">Uninstall the app</strong> — Permanently removes all local data from your device</li>
+        <li><strong style="color:#000000;">Clear app data</strong> — Settings → Apps → HabitSetu → Storage → Clear Data</li>
       </ul>
     </div>
 
     <div class="card">
       <span class="card-label">Manage Ad Preferences</span>
       <ul class="data-list">
-        <li>Android Settings → Google → Ads → Delete Advertising ID</li>
-        <li>Visit <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a> to manage Google ad personalization</li>
+        <li>Android: Settings → Google → Ads → Delete Advertising ID</li>
+        <li>Visit <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a> to manage Google ad personalisation</li>
       </ul>
     </div>
 
-    <p>Since no account or login exists in our app, there is no account deletion process required.</p>
+    <p>Since no account or login exists in this app, there is no account deletion process required.</p>
   </section>
 
-  <!-- 10. Contact -->
+  <!-- ════════════════ 10 — CONTACT ════════════════ -->
   <section id="contact">
     <span class="section-number">10 — Contact</span>
     <h2>Contact Us</h2>
+
     <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
 
     <div class="card">
       <span class="card-label">Developer Contact</span>
       <ul class="data-list">
-        <li><strong style="color:#000000">Email: </strong><a href="mailto:jaythanki.ce@gmail.com">jaythanki.ce@gmail.com</a></li>
-        <li><strong style="color:#000000">App Name:</strong> HabitSetu</li>
-        <li><strong style="color:#000000">Developer Name:</strong> Jaykumar Jitesh Thanki</li>
-        <li><strong style="color:#000000">Country:</strong> India</li>
+        <li><strong style="color:#000000;">Email:</strong> <a href="mailto:jaythanki.ce@gmail.com">jaythanki.ce@gmail.com</a></li>
+        <li><strong style="color:#000000;">App Name:</strong> HabitSetu</li>
+        <li><strong style="color:#000000;">Developer Name:</strong> Jaykumar Jitesh Thanki</li>
+        <li><strong style="color:#000000;">Country:</strong> India</li>
       </ul>
     </div>
 
@@ -713,13 +637,14 @@ We do not knowingly request or serve personalized ads to users identified as chi
     </div>
   </section>
 
+  <!-- ════════════════ FOOTER ════════════════ -->
   <footer>
-  <div class="footer-line"></div>
-  <div class="footer-app">HabitSetu</div>
-  <div class="footer-copy">
-    © 2026 HabitSetu. All rights reserved.
-  </div>
-  <div class="footer-copy">
-    Privacy Policy Version 1.0
-  </div>
-</footer>
+    <div class="footer-line"></div>
+    <div class="footer-app">HabitSetu</div>
+    <div class="footer-copy">© 2026 HabitSetu. All rights reserved.</div>
+    <div class="footer-copy" style="margin-top:4px;">Privacy Policy · Version 1.0 · Effective 11 March 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>
